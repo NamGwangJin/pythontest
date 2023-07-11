@@ -169,10 +169,10 @@ import math
 # print (f"x = {x1} or {x2}")
 
  ## 파이썬 함수
-# def plus(a,b,c):
-#     return a+b+c
-# print(plus(10,7,5))
-#
-# def minus(a,b,c):
-#     print(a-b-c)
-# minus(10,7,5)
+def plus(a,b,c):
+    return a+b+c
+print(plus(10,7,5))
+
+def minus(a,b,c):
+    print(a-b-c)
+minus(10,7,5)
