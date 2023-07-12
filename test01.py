@@ -169,10 +169,39 @@ import math
 # print (f"x = {x1} or {x2}")
 
  ## 파이썬 함수
-def plus(a,b,c):
-    return a+b+c
-print(plus(10,7,5))
+# def plus(a,b,c):
+#     return a+b+c
+# print(plus(10,7,5))
+#
+# def minus(a,b,c):
+#     print(a-b-c)
+# minus(10,7,5)
 
-def minus(a,b,c):
-    print(a-b-c)
-minus(10,7,5)
+def solve(a,b,c):
+   if (b ** 2) - (4 * a * c) > 0:
+        x1 = (-b - math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        x2 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        print(f"x = {x1} or {x2}")
+        return
+   else:
+       print('근을 찾을 수 없습니다.')
+       return
+
+def solve1(a,b,c):
+    if (b**2)-(4*a*c) > 0:
+        x = (-b - math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        return x
+    else:
+        print('근을 찾을 수 없습니다.')
+        return
+def solve2(a,b,c):
+    if (b**2)-(4*a*c) > 0:
+        x = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        return x
+    else:
+        print('근을 찾을 수 없습니다.')
+        return
+
+x1=solve1(1,-3,2)
+x2=solve2(1,-3,2)
+print(f"x = {x1} or {x2}")
