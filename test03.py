@@ -28,3 +28,20 @@
 # d3 = [ {'name':'john', 'age':23}, {'name':'jane', 'age':21}, {'name':'jason', 'age':35} ]
 # for x in d3:
 #     print(x['name'],x['age'])
+
+# lambda (람다 표현식)
+import math
+
+# around = lambda r: 2*math.pi*r
+# square = lambda r: math.pi*r**2
+# volume = lambda r: 4/3*math.pi*r**3
+#
+# radius = float(input('반지름:'))
+# print('둘레',around(radius),'m\n면적:',square(radius),'m2\n체적:',volume(radius),'m3')
+
+# x1 = lambda a, b, c: (-b - math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+# x2 = lambda a, b, c: (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+# a = int(input('a 입력 : '))
+# b = int(input('b 입력 : '))
+# c = int(input('c 입력 : '))
+# print('x =', x1(a, b, c), 'or', x2(a, b, c))
