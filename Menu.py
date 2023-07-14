@@ -53,6 +53,7 @@ class Menu:
             price = int(input(name+'의 가격을 입력해주세요.'))
             self.menuList[int(change)-1] = {'menu':name,'price':price}
             self.display()
+        self.save()
 
     def delete(self):
         self.display()
@@ -64,3 +65,4 @@ class Menu:
             del self.menuList[int(delete) - 1]
             print(delete+'번 메뉴 삭제 완료.')
             self.display()
+        self.save()
