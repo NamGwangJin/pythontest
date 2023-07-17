@@ -2,7 +2,6 @@ class Menu:
     def __init__(self):
         self.menuList = []
         self.build()
-        # self.sum = 0
     def build(self):
         try:
             f = open('c:/temp/menu.txt','r')
@@ -10,10 +9,9 @@ class Menu:
             for i in range(len(arMenu)):
                 menu = arMenu[i].split(',')
                 self.menuList.append({'menu':menu[0],'price':int(menu[1])})
-            print('메뉴를 불러왔습니다.')
+            f.close()
         except:
             print('메뉴를 불러오지 못했습니다.')
-        f.close()
 
     def save(self):
         try:
@@ -21,10 +19,27 @@ class Menu:
             for i in self.menuList:
                 arMenu = i['menu']+","+str(i['price'])+'\n'
                 f.write(arMenu)
-            print('메뉴 저장이 완료되었습니다.')
+            f.close()
         except:
             print('메뉴를 저장하지 못했습니다.')
-        f.close()
+
+    def control(self):
+        while True:
+            ment = input('메뉴 관리 모드입니다. [C:메뉴추가][R:메뉴판출력][U:메뉴수정][D:메뉴삭제][enter:종료]\n')
+            if ment == "C" or ment == "c":
+                self.add()
+            elif ment == "R" or ment == 'r':
+                self.display()
+            elif ment == "U" or ment == 'u':
+                self.update()
+            elif ment == "D" or ment == 'd':
+                self.delete()
+            elif ment == "":
+                print('메뉴관리를 종료합니다.')
+                self.save()
+                break
+            else:
+                print('잘못된 키를 입력하셨습니다.')
 
     def add(self):
         while True:
@@ -40,9 +55,7 @@ class Menu:
     def display(self):
         print('-' * 10, '메뉴판', '-' * 10)
         for i in self.menuList:
-            # self.sum += i['price']
             print(self.menuList.index(i) + 1,"{0:>12}".format(i['menu']),f"{i['price']:5d}원")
-        # print(f"\n메뉴 총액 : {self.sum:8d}원")
 
     def update(self):
         self.display()
